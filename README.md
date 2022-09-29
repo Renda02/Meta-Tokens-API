@@ -15,9 +15,9 @@ A metatoken is a collection of a shopper's existing tokens, ranked according to 
 - Offer more secure payment. 
 - Reuse of meta-token in retried payment. 
 
-To secure your payment,  you can tokenize payments with payment API, Application Programming Interface requests in which a token substitutes the PAN.
+To secure your payment, you can tokenize payments with payment API, Application Programming Interface requests in which a token substitutes the PAN.
 
-In this API reference, you will find information on how to interact with available endpoints. 
+In the following API reference, you will find information on interacting with available endpoints. 
 
 ### Authentication
 
@@ -35,20 +35,16 @@ The version suffix has the following format: "vXX," where XX is the version numb
 
 For example:
 
-`` https://checkout-test.adyen.com/v68/metaTokens ``
-
-Find out more about the API versioning [here](https://docs.adyen.com/development-resources/versioning). 
+`` https://checkout-test.adyen.com/v68/metaTokens `` 
 
 ### Endpoints
 
 <details open>
-  <summary><b>POST</b>/metaTokens</summary>
+<summary><b>POST</b>/metaTokens</summary>
 <br>
 Create a meta-token for Merchant requests with this endpoint.
 
 #### Request parameters 
-  
----
   
 Request Item     | 	Data type| Required /Optional     |
 | :---        |    :----:   |          ---: |
@@ -67,14 +63,28 @@ Request Item     | 	Data type| Required /Optional     |
   ```
 
 #### Response parameters 
-  
----
-  
+   
 Response Item     | 	Data type| Required /Optional     |
 | :---        |    :----:   |          ---: |
 | shopperReference      | String       |Required  |
 | merchantAccount  | String        | Required     |
 | metaTokenId   | String           | Required     | 
+
+##### Sample request
+
+  ```
+  
+  {
+"merchantAccount": "YOUR_MERCHNAT_ACCOUNT",
+"shopperReference": "yourShopperReference",
+"metaTokenId": "9647-2876"
+}
+
+```
+
+
+> Creating the token might take you a couple of minutes and sometimes even up to half an hour.
+
 
 </details>
 
@@ -92,9 +102,10 @@ Make a meta-token payment with a metaTokenId.
 
 ##### **List of questions that I asked when documenting the feature.**
 
-1. How can I test code snippets? 
+1. What is the use case of "metatoken" and "meta-token" naming on the document provided?
 2. How can I get `API KEY`? 
 3. How is the ` shopperReference` obtained? 
 4. How is the merchant identifier obtained?  
 5. Can you point me to the information about the description of the parameters?
+6. How can I test code snippets?  
 
