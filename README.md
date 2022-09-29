@@ -1,6 +1,20 @@
-# Meta-Tokens-API
+# Tokenization 
 
-The metatoken is a collection of a shopper's existing tokens, ranked according to how likely they lead to a successful transaction (based on our machine learning algorithm). 
+## Retrying payments with Meta Tokens
+
+With Meta Tokens, you can collect existing tokens from shoppers, ranked by their chances of completing a successful transaction. Using this method, you can try payment with the highest-ranking token, and if it fails, you can retry payment with the second-ranking token. In addition, this allows you to share tokens across multiple shops under the same company.
+
+Tokenization is a process of replacing sensitive data with non-sensitive data.
+
+A metatoken is a collection of a shopper's existing tokens, ranked according to how likely they lead to a successful transaction (based on our machine learning algorithm).
+
+### Benefits of tokenization
+
+- Increase revenues for businesses, especially those with subscription models.
+- Let users share across multiple shops under the same company.
+- Offer more secure payment. 
+- Reuse of meta-token in retried payment. 
+
 
 ### Authentication
 
