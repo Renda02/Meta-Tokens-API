@@ -15,10 +15,13 @@ A metatoken is a collection of a shopper's existing tokens, ranked according to 
 - Offer more secure payment. 
 - Reuse of meta-token in retried payment. 
 
+To secure your payment,  you can tokenize payments with payment API, Application Programming Interface requests in which a token substitutes the PAN.
+
+In this API reference, you will find information on how to interact with available endpoints. 
 
 ### Authentication
 
-Each request to the MetaToken must include an API KEY. Set this key to the x-api-key header value, for example:
+Each request to the meta-token must include an API KEY. Set this key to the x-api-key header value, for example:
 
 ```
 curl https://checkout-test.adyen.com/v68/metaTokens \
@@ -78,7 +81,7 @@ Response Item     | 	Data type| Required /Optional     |
 <details open>
   <summary><b>POST</b>/payments</summary>
 <br>
-Make a meta token payment with a metaTokenId.
+Make a meta-token payment with a metaTokenId.
   
   #### Parameters <hr>
   
@@ -89,8 +92,9 @@ Make a meta token payment with a metaTokenId.
 
 ##### **List of questions that I asked when documenting the feature.**
 
-1. How can I get `API KEY`? 
-2. How is the ` shopperReference` obtained? 
-3. How is the merchant identifier obtained?  
-4. Can you point me to the information about the description of the parameters?
+1. How can I test code snippets? 
+2. How can I get `API KEY`? 
+3. How is the ` shopperReference` obtained? 
+4. How is the merchant identifier obtained?  
+5. Can you point me to the information about the description of the parameters?
 
