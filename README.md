@@ -51,7 +51,7 @@ Request Item     | 	Data type| Required /Optional     |
 | shopperReference      | String       |Required  |
 | merchantAccount  | String        | Required     |
   
-##### Sample request
+#####   Sample Request 
   ```
   curl https://checkout-test.adyen.com/v68/metaTokens \
 -H 'x-api-key: ' \
@@ -70,10 +70,9 @@ Response Item     | 	Data type| Required /Optional     |
 | merchantAccount  | String        | Required     |
 | metaTokenId   | String           | Required     | 
 
-##### Sample request
+##### Sample response
 
   ```
-  
   {
 "merchantAccount": "YOUR_MERCHNAT_ACCOUNT",
 "shopperReference": "yourShopperReference",
@@ -91,19 +90,71 @@ Response Item     | 	Data type| Required /Optional     |
 <br>
 Make a meta-token payment with a metaTokenId.
   
-  #### Parameters <hr>
+#### Parameters 
   
-  ##### Path parameters
+##### Path parameters
   
+  Path parameter     | 	Description|
+  | :---        |    :----  |  
+  |  metaTokenId      | When making a payment request with a MetaToken, you must include the metaTokenId.      |
+ 
 </details>
+
+
+### Reponse handling
+
+After submitting the API call to MetaToken, you receive a response to inform the status that the request was received and processed. For example, depending on the status message of MetaToken, you may receive the following webhook notification. 
+
+#### Response handling parameters 
+
+#### Success parameters 
+  
+Success Item     | 	Data type| MetaToken status    | Notes |
+| :---        |    :----:   |          ---: |     :---   |
+|  metaTokenId      | String       | unique Id  | The unique Id is only generated to a metatoken successfully created.     |
+| success  | String        | true   |    A metatoken has been created successfully.     |
+
+##### Success webhook notification
+
+```
+{
+"live": "false",
+"notificationItems": [ {
+"NotificationRequestItem": {
+"merchantAccount": "YOUR_MERCHNAT_ACCOUNT"
+"eventCode": "META_TOKEN_CREATION",
+"metaTokenId": "9647-2876",
+"success": "true"
+}} ]}
+```
+
+#### Error parameters 
+
+Error Item     | 	Data type| MetaToken status    | Notes |
+| :---        |    :----:   |          ---: |     :---   |
+| reason       | String       | Technical error  | The meta-token cannot be generated. </br> Send the request again.   |
+| success  | String        | false   |    A metatoken has not been created successfully.     |
+
+##### Error webhook notification
+
+```
+{ "live": "false",
+"notificationItems": [
+{
+"NotificationRequestItem": {
+"eventCode": "META_TOKEN_CREATION",
+"reason": "Technical error",
+"success": "false"
+}}]}
+```
 
 
 ##### **List of questions that I asked when documenting the feature.**
 
 1. What is the difference between "metatoken" and "meta-token" naming on the document provided?
-2. Where can the user get api key? 
-3. How is the ` shopperReference` obtained? 
-4. How is the merchant identifier obtained?  
-5. Can you point me to the information about the description of the parameters?
-6. How are code snippets in a document tested?  
+2. Do I need a merchant account? 
+3. Where can I get api key? Is a quick guide needed to provide API keys? 
+4. Can you point me to the information about the description of the parameters?
+5. How are code snippets samples in a document tested?
+
 
