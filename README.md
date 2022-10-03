@@ -39,7 +39,7 @@ For example:
 
 ### Endpoints
 
-<details open>
+<details close>
 <summary><b>POST</b>/metaTokens</summary>
 <br>
 Create a meta-token for Merchant requests with this endpoint.
@@ -85,7 +85,7 @@ Response Item     | 	Data type| Required /Optional     |
   
 </details>
 
-<details open>
+<details close>
   <summary><b>POST</b>/payments</summary>
 <br>
 Make a meta-token payment with a metaTokenId.
@@ -106,8 +106,8 @@ Make a meta-token payment with a metaTokenId.
 After submitting the API call to MetaToken, you receive a response to inform the status that the request was received and processed. For example, depending on the status message of MetaToken, you may receive the following webhook notification. 
 
 #### Response handling parameters 
-
-#### Success parameters 
+<details close>
+ <summary><h4>Success parameters </h4></summary>
   
 Success Item     | 	Data type| MetaToken status    | Notes |
 | :---        |    :----:   |          ---: |     :---   |
@@ -127,8 +127,9 @@ Success Item     | 	Data type| MetaToken status    | Notes |
 "success": "true"
 }} ]}
 ```
-
-#### Error parameters 
+</details>
+<details close>
+ <summary><h4>Error parameters </h4></summary> 
 
 Error Item     | 	Data type| MetaToken status    | Notes |
 | :---        |    :----:   |          ---: |     :---   |
@@ -147,7 +148,7 @@ Error Item     | 	Data type| MetaToken status    | Notes |
 "success": "false"
 }}]}
 ```
-
+</details>
 
 ##### **List of questions that I asked when documenting the feature.**
 
